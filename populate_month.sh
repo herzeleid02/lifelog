@@ -53,8 +53,8 @@ print_help(){
 main(){
 	# the main program
 	mdays=$(cal $month | xargs -n1 | tail -1)
-	for i in $(seq $mdays); do
-		printf "# $(date '+%d %B %Y, %A, Week %W')\n\n"
+	for day in $(seq $mdays); do
+		printf "# $(date '+%d %B %Y, %A, Week %W' -d "$year-$month-$day") \n\n"
 	done
 }
 
